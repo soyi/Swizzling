@@ -23,11 +23,50 @@
     
     [Swizzling swizzleMethods];
     
-    NSMutableString *str = [NSMutableString stringWithFormat:@"a"];
-    [str appendString:nil];
+    [self test];
     
+    NSLog(@"OK");
     
     return YES;
+}
+
+- (void)test {
+    NSMutableArray* array = [NSMutableArray arrayWithObjects:@1, @2, @3, nil];
+    [array subarrayWithRange:NSMakeRange(1, 3)];
+    [array removeObjectAtIndex:1];
+    [array addObject:nil];
+    [array removeObjectAtIndex:3];
+    [array removeObjectsInRange:NSMakeRange(3, 2)];
+
+    NSString* string = @"12345";
+    [string substringFromIndex:6];
+    [string substringToIndex:6];
+    [string substringWithRange:NSMakeRange(0, 6)];
+
+    NSMutableString* mstring = [NSMutableString string];
+    [mstring appendString:@"12345"];
+    NSLog(@"%@", [mstring substringToIndex:10]);
+    NSLog(@"%@", [mstring substringWithRange:NSMakeRange(3, 10)]);
+
+    NSCache * cache = [[NSCache alloc] init];
+
+    [cache setObject:nil forKey:@""];
+    [cache setObject:nil forKey:@"" cost:0];
+
+    id a[] = {@"a",@"b", nil ,@"c"};
+    NSLog(@"%@", [NSMutableArray arrayWithObjects:a count:4]);
+
+    /* NSArray: Syntactic sugar */
+    NSArray* item = nil;
+    NSArray * items = @[@"a",@"b", item ,@"c"];
+    NSLog(@"%@", items);
+
+    /* NSDictory: Syntactic sugar */
+    NSString* key = nil;
+    NSString* value = nil;
+    NSLog(@"%@", @{@"b":@"c",key:value, @"e":value});
+    NSArray *arr = [NSArray array];
+    [arr objectAtIndex:0];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

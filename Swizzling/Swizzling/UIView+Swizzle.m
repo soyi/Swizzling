@@ -12,7 +12,7 @@
 
 - (void)addSubviewSafe:(UIView *)view
 {
-    if ( view == self ) {
+    if (view == self) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
@@ -21,7 +21,7 @@
 
 - (void)insertSubviewSafe:(UIView *)view atIndex:(NSInteger)index
 {
-    if ( view == self )  {
+    if (view == self)  {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
@@ -30,7 +30,7 @@
 
 - (void)insertSubviewSafe:(UIView *)view belowSubview:(UIView *)siblingSubview
 {
-    if ( view == self ) {
+    if (view == self) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
@@ -39,7 +39,7 @@
 
 - (void)insertSubviewSafe:(UIView *)view aboveSubview:(UIView *)siblingSubview
 {
-    if ( view == self ) {
+    if (view == self) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }

@@ -11,24 +11,33 @@
 @implementation NSDictionary (Swizzle)
 - (void)setObject:(id)anObject forKeySafe:(id <NSCopying>)aKey
 {
-    if (anObject == nil) {
+    if (!anObject) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return;
-    }else{
-        [self setObject:anObject forKeySafe:aKey];
     }
+    [self setObject:anObject forKeySafe:aKey];
 }
 
-- (id)objectForKeySafe:(id)aKey
+- (instancetype)objectForKeySafe:(id)aKey
 {
-    if ( nil == aKey ) {
+    if (!aKey) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return nil;
     }
     return [self objectForKeySafe:aKey];
 }
 
-+ (id)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
++ (instancetype)dictionaryWithObjectSafe:(id)object forKey:(id)key
+{
+    if (object && key) {
+        return [self dictionaryWithObjectSafe:object forKey:key];
+    }else {
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
+        return nil;
+    }
+}
+
++ (instancetype)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
     for (int i = 0; i < cnt; ++i){
         id object = objects[i];
@@ -43,11 +52,19 @@
 
 - (void)setObjectSafe:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
-    if ( nil == obj || nil == key ) {
+    if (nil == obj || nil == key) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return;
     }
     [self setObjectSafe:obj forKeyedSubscript:key];
+}
+
+- (void)removeObjectForKeySafe:(id)aKey {
+    if (aKey) {
+        [self removeObjectForKeySafe:aKey];
+    } else {
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
+    }
 }
 
 @end

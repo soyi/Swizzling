@@ -13,5 +13,7 @@
 - (id)objectForKeySafe:(id)aKey;
 + (id)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt;
 - (void)setObjectSafe:(id)obj forKeyedSubscript:(id <NSCopying>)key;
++ (instancetype)dictionaryWithObjectSafe:(id)object forKey:(id)key;
+- (void)removeObjectForKeySafe:(id)aKey;
 
 @end

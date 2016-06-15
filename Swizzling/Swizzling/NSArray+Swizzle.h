@@ -15,5 +15,9 @@
 - (void)addObjectSafe:(id)anObject;
 - (void)removeObjectAtIndexSafe:(NSUInteger)index;
 - (void)replaceObjectAtIndexSafe:(NSUInteger)index withObject:(id)anObject;
+- (void)removeObjectsInRangeSafe:(NSRange)range;
+- (NSArray *)subarrayWithRangeSafe:(NSRange)range;
++ (instancetype)arrayWithObjectSafe:(id)anObject;
++ (instancetype)arrayWithObjectsSafe:(const id [])objects count:(NSUInteger)cnt;
 
 @end

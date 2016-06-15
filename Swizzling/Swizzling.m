@@ -38,25 +38,42 @@
     [arrayClassM jr_swizzleMethod:@selector(addObject:) withMethod:@selector(addObjectSafe:) error:&error];
     [arrayClassM jr_swizzleMethod:@selector(removeObjectAtIndex:) withMethod:@selector(removeObjectAtIndexSafe:) error:&error];
     [arrayClassM jr_swizzleMethod:@selector(replaceObjectAtIndex:withObject:) withMethod:@selector(replaceObjectAtIndexSafe:withObject:) error:&error];
+    [arrayClassM jr_swizzleMethod:@selector(removeObjectsInRange:) withMethod:@selector(removeObjectsInRangeSafe:) error:&error];
+    [arrayClassM jr_swizzleMethod:@selector(arrayWithObject:) withMethod:@selector(arrayWithObjectSafe:) error:&error];
+    [arrayClassM jr_swizzleMethod:@selector(arrayWithObjects:count:) withMethod:@selector(arrayWithObjectsSafe:count:) error:&error];
+    [arrayClassM jr_swizzleMethod:@selector(subarrayWithRange:) withMethod:@selector(subarrayWithRangeSafe:) error:&error];
     
     Class arrayClassI = NSClassFromString(@"__NSArrayI");
     [arrayClassI jr_swizzleMethod:@selector(objectAtIndex:) withMethod:@selector(objectAtIndexSafe:) error:&error];
     [arrayClassI jr_swizzleMethod:@selector(objectAtIndexedSubscript:) withMethod:@selector(objectAtIndexedSubscriptSafe:) error:&error];
+    [arrayClassI jr_swizzleMethod:@selector(arrayWithObject:) withMethod:@selector(arrayWithObjectSafe:) error:&error];
+    [arrayClassI jr_swizzleMethod:@selector(arrayWithObjects:count:) withMethod:@selector(arrayWithObjectsSafe:count:) error:&error];
+    [arrayClassI jr_swizzleMethod:@selector(subarrayWithRange:) withMethod:@selector(subarrayWithRangeSafe:) error:&error];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
     {
         Class arrayClass0 = NSClassFromString(@"__NSArray0");
         [arrayClass0 jr_swizzleMethod:@selector(objectAtIndex:) withMethod:@selector(objectAtIndexSafe:) error:&error];
         [arrayClass0 jr_swizzleMethod:@selector(objectAtIndexedSubscript:) withMethod:@selector(objectAtIndexedSubscriptSafe:) error:&error];
+        [arrayClass0 jr_swizzleMethod:@selector(arrayWithObject:) withMethod:@selector(arrayWithObjectSafe:) error:&error];
+        [arrayClass0 jr_swizzleMethod:@selector(arrayWithObjects:count:) withMethod:@selector(arrayWithObjectsSafe:count:) error:&error];
+        [arrayClass0 jr_swizzleMethod:@selector(subarrayWithRange:) withMethod:@selector(substringWithRangeSafe:) error:&error];
     }
     
 #pragma Dictionary
-    Class dicClass = NSClassFromString(@"__NSDictionaryM");
-    [dicClass jr_swizzleMethod:@selector(setObject:forKey:) withMethod:@selector(setObject:forKeySafe:) error:&error];
-    [dicClass jr_swizzleMethod:@selector(objectForKey:) withMethod:@selector(objectForKeySafe:) error:&error];
-    [NSDictionary jr_swizzleClassMethod:@selector(dictionaryWithObjects:forKeys:count:) withClassMethod:@selector(dictionaryWithObjectsSafe:forKeys:count:) error:&error];
-    [dicClass jr_swizzleMethod:@selector(setObject:forKeyedSubscript:) withMethod:@selector(setObjectSafe:forKeyedSubscript:) error:&error];
-    ;
+    
+    Class dicClass = NSClassFromString(@"NSDictionary");
+    [dicClass jr_swizzleMethod:@selector(dictionaryWithObject:forKey:) withMethod:@selector(dictionaryWithObjectSafe:forKey:) error:&error];
+    [dicClass jr_swizzleMethod:@selector(dictionaryWithObjects:forKeys:count:) withMethod:@selector(dictionaryWithObjectsSafe:forKeys:count:) error:&error];
+    
+    Class dicClassI = NSClassFromString(@"__NSDictionaryI");
+    [dicClassI jr_swizzleMethod:@selector(objectForKey:) withMethod:@selector(objectForKeySafe:) error:&error];
+    
+    Class dicClassM = NSClassFromString(@"__NSDictionaryM");
+    [dicClassM jr_swizzleMethod:@selector(setObject:forKey:) withMethod:@selector(setObject:forKeySafe:) error:&error];
+    [dicClassM jr_swizzleMethod:@selector(objectForKey:) withMethod:@selector(objectForKeySafe:) error:&error];
+    [dicClassM jr_swizzleClassMethod:@selector(removeObjectForKey:) withClassMethod:@selector(removeObjectForKeySafe:) error:&error];
+    [dicClassM jr_swizzleMethod:@selector(setObject:forKeyedSubscript:) withMethod:@selector(setObjectSafe:forKeyedSubscript:) error:&error];
     
 #pragma View
     Class viewClass = NSClassFromString(@"UIView");
