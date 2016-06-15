@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (Swizzle)
-- (void)setObject:(id)anObject forKeySafe:(id <NSCopying>)aKey;
+- (void)setObjectSafe:(id)anObject forKey:(id <NSCopying>)aKey;
 - (id)objectForKeySafe:(id)aKey;
 + (id)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt;
 - (void)setObjectSafe:(id)obj forKeyedSubscript:(id <NSCopying>)key;

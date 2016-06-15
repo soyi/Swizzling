@@ -70,7 +70,7 @@
     [dicClassI jr_swizzleMethod:@selector(objectForKey:) withMethod:@selector(objectForKeySafe:) error:&error];
     
     Class dicClassM = NSClassFromString(@"__NSDictionaryM");
-    [dicClassM jr_swizzleMethod:@selector(setObject:forKey:) withMethod:@selector(setObject:forKeySafe:) error:&error];
+    [dicClassM jr_swizzleMethod:@selector(setObject:forKey:) withMethod:@selector(setObjectSafe:forKey:) error:&error];
     [dicClassM jr_swizzleMethod:@selector(objectForKey:) withMethod:@selector(objectForKeySafe:) error:&error];
     [dicClassM jr_swizzleClassMethod:@selector(removeObjectForKey:) withClassMethod:@selector(removeObjectForKeySafe:) error:&error];
     [dicClassM jr_swizzleMethod:@selector(setObject:forKeyedSubscript:) withMethod:@selector(setObjectSafe:forKeyedSubscript:) error:&error];

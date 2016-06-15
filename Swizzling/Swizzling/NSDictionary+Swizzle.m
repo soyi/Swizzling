@@ -9,13 +9,13 @@
 #import "NSDictionary+Swizzle.h"
 
 @implementation NSDictionary (Swizzle)
-- (void)setObject:(id)anObject forKeySafe:(id <NSCopying>)aKey
+- (void)setObjectSafe:(id)anObject forKey:(id <NSCopying>)aKey
 {
-    if (!anObject) {
+    if (!anObject || !aKey) {
         NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return;
     }
-    [self setObject:anObject forKeySafe:aKey];
+    [self setObjectSafe:anObject forKey:aKey];
 }
 
 - (instancetype)objectForKeySafe:(id)aKey
