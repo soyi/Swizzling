@@ -10,40 +10,40 @@
 
 @implementation UIView(Swizzle)
 
-- (void)addSubviewAlt:(UIView *)view
+- (void)addSubviewSafe:(UIView *)view
 {
     if ( view == self ) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
-    [self addSubviewAlt:view];
+    [self addSubviewSafe:view];
 }
 
-- (void)insertSubviewAlt:(UIView *)view atIndex:(NSInteger)index
+- (void)insertSubviewSafe:(UIView *)view atIndex:(NSInteger)index
 {
     if ( view == self )  {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
-    [self insertSubviewAlt:view atIndex:index];
+    [self insertSubviewSafe:view atIndex:index];
 }
 
-- (void)insertSubviewAlt:(UIView *)view belowSubview:(UIView *)siblingSubview
+- (void)insertSubviewSafe:(UIView *)view belowSubview:(UIView *)siblingSubview
 {
     if ( view == self ) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
-    [self insertSubviewAlt:view belowSubview:siblingSubview];
+    [self insertSubviewSafe:view belowSubview:siblingSubview];
 }
 
-- (void)insertSubviewAlt:(UIView *)view aboveSubview:(UIView *)siblingSubview
+- (void)insertSubviewSafe:(UIView *)view aboveSubview:(UIView *)siblingSubview
 {
     if ( view == self ) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return ;
     }
-    [self insertSubviewAlt:view aboveSubview:siblingSubview];
+    [self insertSubviewSafe:view aboveSubview:siblingSubview];
 }
 
 @end

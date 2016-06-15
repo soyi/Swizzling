@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (Swizzle)
-- (void)setObject:(id)anObject forKeyAlt:(id <NSCopying>)aKey;
-- (id)objectForKeyAlt:(id)aKey;
-+ (id)dictionaryWithObjectsAlt:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt;
-- (void)setObjectAlt:(id)obj forKeyedSubscript:(id <NSCopying>)key;
+- (void)setObject:(id)anObject forKeySafe:(id <NSCopying>)aKey;
+- (id)objectForKeySafe:(id)aKey;
++ (id)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt;
+- (void)setObjectSafe:(id)obj forKeyedSubscript:(id <NSCopying>)key;
 
 @end

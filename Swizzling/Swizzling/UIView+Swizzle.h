@@ -11,12 +11,9 @@
 
 @interface UIView(Swizzle)
 
-- (void)addSubviewAlt:(UIView *)view;
-
-- (void)insertSubviewAlt:(UIView *)view atIndex:(NSInteger)index;
-
-- (void)insertSubviewAlt:(UIView *)view belowSubview:(UIView *)siblingSubview;
-
-- (void)insertSubviewAlt:(UIView *)view aboveSubview:(UIView *)siblingSubview;
+- (void)addSubviewSafe:(UIView *)view;
+- (void)insertSubviewSafe:(UIView *)view atIndex:(NSInteger)index;
+- (void)insertSubviewSafe:(UIView *)view belowSubview:(UIView *)siblingSubview;
+- (void)insertSubviewSafe:(UIView *)view aboveSubview:(UIView *)siblingSubview;
 
 @end

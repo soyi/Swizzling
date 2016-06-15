@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-//#import "Swizzling.h"
+#import "Swizzling.h"
+#import "NSString+Swizzle.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,11 @@
     // Override point for customization after application launch.
     
     
-//    [Swizzling swizzleMethods];
+    [Swizzling swizzleMethods];
     
-    NSMutableArray *arr = [NSMutableArray array];
-    [arr addObject:nil];
+    NSMutableString *str = [NSMutableString stringWithFormat:@"a"];
+    [str appendString:nil];
+    
     
     return YES;
 }

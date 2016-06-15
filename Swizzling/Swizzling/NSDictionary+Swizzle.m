@@ -9,47 +9,45 @@
 #import "NSDictionary+Swizzle.h"
 
 @implementation NSDictionary (Swizzle)
-- (void)setObject:(id)anObject forKeyAlt:(id <NSCopying>)aKey
+- (void)setObject:(id)anObject forKeySafe:(id <NSCopying>)aKey
 {
     if (anObject == nil) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return;
     }else{
-        [self setObject:anObject forKeyAlt:aKey];
+        [self setObject:anObject forKeySafe:aKey];
     }
 }
 
-
-- (id)objectForKeyAlt:(id)aKey
+- (id)objectForKeySafe:(id)aKey
 {
     if ( nil == aKey ) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return nil;
     }
-    return [self objectForKeyAlt:aKey];
+    return [self objectForKeySafe:aKey];
 }
 
-
-+ (id)dictionaryWithObjectsAlt:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
++ (id)dictionaryWithObjectsSafe:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
     for (int i = 0; i < cnt; ++i){
         id object = objects[i];
         if (object == nil) {
-            NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+            NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
             return nil;
         }
     }
-    id retObject = [self dictionaryWithObjectsAlt:objects forKeys:keys count:cnt];
+    id retObject = [self dictionaryWithObjectsSafe:objects forKeys:keys count:cnt];
     return retObject;
 }
 
-- (void)setObjectAlt:(id)obj forKeyedSubscript:(id <NSCopying>)key
+- (void)setObjectSafe:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
     if ( nil == obj || nil == key ) {
-        NSLog(@"Error: stack : %@", [NSThread callStackSymbols]);
+        NSLog(@"Error_Stack : %@", [NSThread callStackSymbols]);
         return;
     }
-    [self setObjectAlt:obj forKeyedSubscript:key];
+    [self setObjectSafe:obj forKeyedSubscript:key];
 }
 
 @end

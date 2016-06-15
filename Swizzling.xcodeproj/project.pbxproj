@@ -15,9 +15,15 @@
 		55426F291D0D63BC0042D9E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55426F271D0D63BC0042D9E5 /* LaunchScreen.storyboard */; };
 		55426F321D0D64250042D9E5 /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F311D0D64250042D9E5 /* Swizzling.m */; };
 		55426F361D0D646B0042D9E5 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F351D0D646B0042D9E5 /* JRSwizzle.m */; };
-		55426F401D0D65080042D9E5 /* NSArray+EX.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F391D0D65080042D9E5 /* NSArray+EX.m */; };
+		55426F401D0D65080042D9E5 /* NSArray+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F391D0D65080042D9E5 /* NSArray+Swizzle.m */; };
 		55426F411D0D65080042D9E5 /* NSDictionary+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F3B1D0D65080042D9E5 /* NSDictionary+Swizzle.m */; };
 		55426F431D0D65080042D9E5 /* UIView+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F3F1D0D65080042D9E5 /* UIView+Swizzle.m */; };
+		55426F4D1D1134C30042D9E5 /* NSSet+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F4C1D1134C30042D9E5 /* NSSet+Swizzle.m */; };
+		55426F501D1135CB0042D9E5 /* NSOrderedSet+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F4F1D1135CB0042D9E5 /* NSOrderedSet+Swizzle.m */; };
+		55426F531D1136430042D9E5 /* NSUserDefaults+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F521D1136430042D9E5 /* NSUserDefaults+Swizzle.m */; };
+		55426F561D1136A80042D9E5 /* NSCache+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F551D1136A80042D9E5 /* NSCache+Swizzle.m */; };
+		55426F591D1136E30042D9E5 /* NSString+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F581D1136E30042D9E5 /* NSString+Swizzle.m */; };
+		55426F5C1D1137920042D9E5 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 55426F5B1D1137920042D9E5 /* NSObject+Swizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +41,24 @@
 		55426F311D0D64250042D9E5 /* Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Swizzling.m; path = Swizzling/Swizzling.m; sourceTree = SOURCE_ROOT; };
 		55426F341D0D646B0042D9E5 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		55426F351D0D646B0042D9E5 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
-		55426F381D0D65080042D9E5 /* NSArray+EX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EX.h"; sourceTree = "<group>"; };
-		55426F391D0D65080042D9E5 /* NSArray+EX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EX.m"; sourceTree = "<group>"; };
+		55426F381D0D65080042D9E5 /* NSArray+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Swizzle.h"; sourceTree = "<group>"; };
+		55426F391D0D65080042D9E5 /* NSArray+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Swizzle.m"; sourceTree = "<group>"; };
 		55426F3A1D0D65080042D9E5 /* NSDictionary+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Swizzle.h"; sourceTree = "<group>"; };
 		55426F3B1D0D65080042D9E5 /* NSDictionary+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Swizzle.m"; sourceTree = "<group>"; };
 		55426F3E1D0D65080042D9E5 /* UIView+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Swizzle.h"; sourceTree = "<group>"; };
 		55426F3F1D0D65080042D9E5 /* UIView+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Swizzle.m"; sourceTree = "<group>"; };
+		55426F4B1D1134C30042D9E5 /* NSSet+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Swizzle.h"; sourceTree = "<group>"; };
+		55426F4C1D1134C30042D9E5 /* NSSet+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Swizzle.m"; sourceTree = "<group>"; };
+		55426F4E1D1135CB0042D9E5 /* NSOrderedSet+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+Swizzle.h"; sourceTree = "<group>"; };
+		55426F4F1D1135CB0042D9E5 /* NSOrderedSet+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOrderedSet+Swizzle.m"; sourceTree = "<group>"; };
+		55426F511D1136430042D9E5 /* NSUserDefaults+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Swizzle.h"; sourceTree = "<group>"; };
+		55426F521D1136430042D9E5 /* NSUserDefaults+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Swizzle.m"; sourceTree = "<group>"; };
+		55426F541D1136A80042D9E5 /* NSCache+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCache+Swizzle.h"; sourceTree = "<group>"; };
+		55426F551D1136A80042D9E5 /* NSCache+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCache+Swizzle.m"; sourceTree = "<group>"; };
+		55426F571D1136E30042D9E5 /* NSString+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Swizzle.h"; sourceTree = "<group>"; };
+		55426F581D1136E30042D9E5 /* NSString+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Swizzle.m"; sourceTree = "<group>"; };
+		55426F5A1D1137920042D9E5 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		55426F5B1D1137920042D9E5 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +129,24 @@
 				55426F331D0D646B0042D9E5 /* JRSwizzle */,
 				55426F301D0D64250042D9E5 /* Swizzling.h */,
 				55426F311D0D64250042D9E5 /* Swizzling.m */,
-				55426F381D0D65080042D9E5 /* NSArray+EX.h */,
-				55426F391D0D65080042D9E5 /* NSArray+EX.m */,
+				55426F381D0D65080042D9E5 /* NSArray+Swizzle.h */,
+				55426F391D0D65080042D9E5 /* NSArray+Swizzle.m */,
 				55426F3A1D0D65080042D9E5 /* NSDictionary+Swizzle.h */,
 				55426F3B1D0D65080042D9E5 /* NSDictionary+Swizzle.m */,
 				55426F3E1D0D65080042D9E5 /* UIView+Swizzle.h */,
 				55426F3F1D0D65080042D9E5 /* UIView+Swizzle.m */,
+				55426F4B1D1134C30042D9E5 /* NSSet+Swizzle.h */,
+				55426F4C1D1134C30042D9E5 /* NSSet+Swizzle.m */,
+				55426F4E1D1135CB0042D9E5 /* NSOrderedSet+Swizzle.h */,
+				55426F4F1D1135CB0042D9E5 /* NSOrderedSet+Swizzle.m */,
+				55426F511D1136430042D9E5 /* NSUserDefaults+Swizzle.h */,
+				55426F521D1136430042D9E5 /* NSUserDefaults+Swizzle.m */,
+				55426F541D1136A80042D9E5 /* NSCache+Swizzle.h */,
+				55426F551D1136A80042D9E5 /* NSCache+Swizzle.m */,
+				55426F571D1136E30042D9E5 /* NSString+Swizzle.h */,
+				55426F581D1136E30042D9E5 /* NSString+Swizzle.m */,
+				55426F5A1D1137920042D9E5 /* NSObject+Swizzle.h */,
+				55426F5B1D1137920042D9E5 /* NSObject+Swizzle.m */,
 			);
 			path = Swizzling;
 			sourceTree = "<group>";
@@ -192,14 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55426F5C1D1137920042D9E5 /* NSObject+Swizzle.m in Sources */,
+				55426F4D1D1134C30042D9E5 /* NSSet+Swizzle.m in Sources */,
 				55426F211D0D63BC0042D9E5 /* ViewController.m in Sources */,
+				55426F501D1135CB0042D9E5 /* NSOrderedSet+Swizzle.m in Sources */,
 				55426F1E1D0D63BC0042D9E5 /* AppDelegate.m in Sources */,
+				55426F561D1136A80042D9E5 /* NSCache+Swizzle.m in Sources */,
 				55426F1B1D0D63BC0042D9E5 /* main.m in Sources */,
 				55426F321D0D64250042D9E5 /* Swizzling.m in Sources */,
 				55426F361D0D646B0042D9E5 /* JRSwizzle.m in Sources */,
 				55426F431D0D65080042D9E5 /* UIView+Swizzle.m in Sources */,
 				55426F411D0D65080042D9E5 /* NSDictionary+Swizzle.m in Sources */,
-				55426F401D0D65080042D9E5 /* NSArray+EX.m in Sources */,
+				55426F591D1136E30042D9E5 /* NSString+Swizzle.m in Sources */,
+				55426F401D0D65080042D9E5 /* NSArray+Swizzle.m in Sources */,
+				55426F531D1136430042D9E5 /* NSUserDefaults+Swizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
